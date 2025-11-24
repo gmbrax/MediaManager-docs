@@ -3,9 +3,10 @@ name: Sync Docs to Wiki
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch
+      - main
     paths:
       - 'docs/**'
+  workflow_dispatch:  # Add this line to enable manual runs
 
 jobs:
   sync-wiki:

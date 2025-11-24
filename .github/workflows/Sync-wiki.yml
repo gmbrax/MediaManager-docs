@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'docs/**'
-  workflow_dispatch:  # Add this line to enable manual runs
+  workflow_dispatch:
 
 jobs:
   sync-wiki:
@@ -20,6 +20,7 @@ jobs:
         with:
           repository: ${{ github.repository }}.wiki
           path: wiki
+          token: ${{ secrets.WIKI_TOKEN }}  # Add this line
 
       - name: Sync docs to wiki
         run: |
